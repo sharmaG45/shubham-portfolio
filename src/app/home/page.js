@@ -16,28 +16,28 @@ const HomePage = () => {
             tools: ['HTML', 'CSS', 'React', 'NextJS', 'Firebase', 'RESTful API'],
             myRole: 'Full Stack Developer',
             description: `Developed RESTful APIs for user registration, login, profile management, and CRUD operations, ensuring efficient data handling and seamless authentication. Optimized frontend performance to enhance responsiveness across devices. Integrated OTP-based email verification for secure password recovery. Implemented a 'Connect with Us' feature, enabling users to raise concerns anytime, increasing customer satisfaction by over 60%.`,
-            link: 'https://github.com/yourusername/ai-financial-app'
+            link: 'https://jetquins-travels-i5nw.vercel.app/'
         },
         {
             name: 'GetPixelSecurity',
             tools: ['React', 'NextJS', 'Firebase', 'Node.js', 'Express', 'HTML', 'CSS'],
             myRole: 'Full Stack Developer',
             description: `Developed and maintained GetPixelSecurity, an e-commerce platform specializing in cybersecurity products like network firewalls and encryption tools, using Next.js, Firebase, and APIs. Implemented secure authentication, optimized frontend performance, and integrated dynamic product management. Ensured seamless transactions, real-time updates, and enhanced user experience with responsive design and efficient data handling.`,
-            link: 'https://ecommerce-app-demo.vercel.app'
+            link: 'https://get-pixel-security.vercel.app/'
         },
         {
             name: 'Cybertron',
             tools: ['React','Next.js','CSS','Bootstrap'],
             myRole: 'Frontend Developer',
             description: ``,
-            link: 'https://github.com/yourusername/flight-booking-system'
+            link: 'https://cybertron-flame.vercel.app/'
         },
         {
             name: 'Personal Portfolio Website',
             tools: ['React', 'Next.js', 'Tailwind CSS'],
             myRole: 'Frontend Developer',
             description: `Created a personal portfolio showcasing my projects and skills. Used Next.js for optimized performance and Framer Motion for smooth animations.`,
-            link: 'https://yourportfolio.vercel.app'
+            link: 'https://shubham-portfolio-tan.vercel.app/'
         }
     ];
 
