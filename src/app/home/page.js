@@ -56,7 +56,7 @@ const HomePage = () => {
         },
         {
             "course": "Higher Secondary Education (12th)",
-            "university": "BSEB, Patna",
+            "university": "Bihar School Examination Board, Patna",
             "session": "2016 - 2018"
         }
     ]
@@ -84,7 +84,7 @@ const HomePage = () => {
             role: "Software Developer",
             company: "Jetquins Travels PVT LTD",
             duration: "Oct 2024 - Present",
-            description: "Developed REST APIs for user registration, login, and profile management, ensuring seamless authentication and user experience and Implemented CRUD operations to enable efficient data handling and user account management and Focused on frontend performance optimization, improving load times and responsiveness across devices"
+            description: "Developed REST APIs for user registration, login, and profile management, ensuring seamless authentication and user experience and Implemented CRUD operations to enable efficient data handling and user account management and Focused on frontend performance optimization, improving load times and responsiveness across devices."
         },
         {
             role: "Full Stack Developer",
@@ -125,7 +125,7 @@ const HomePage = () => {
                     initial={{ opacity: 0, x: -100 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="md:w-1/2 text-center md:text-left max-w-xl mx-auto md:mx-0 p-4"
+                    className="md:w-1/2 text-center md:text-left max-w-xl mx-auto md:mx-0 p-4 mt-10"
                 >
                     <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight">
                         Hi, I'm <span className="text-amber-500">Shubham Kumar</span>
