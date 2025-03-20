@@ -27,7 +27,7 @@ const HomePage = () => {
         },
         {
             name: 'Cybertron',
-            tools: ['React','Next.js','CSS','Bootstrap'],
+            tools: ['React', 'Next.js', 'CSS', 'Bootstrap'],
             myRole: 'Frontend Developer',
             description: ``,
             link: 'https://cybertron-flame.vercel.app/'
@@ -50,7 +50,7 @@ const HomePage = () => {
         },
         {
             "course": "Bachelor of Computer Applications (BCA)",
-            "university": "Babasaheb Bhimrao Ambedkar Bihar University (BRABU), Muzffarpur, Bihar",
+            "university": "Babasaheb Bhimrao Ambedkar Bihar University (BRABU), Muzaffarpur , Bihar",
             "session": "2018 - 2021"
         },
         {
@@ -116,7 +116,7 @@ const HomePage = () => {
     };
 
     return (
-        <div className="container mx-auto px-6 max-w-6xl" >
+        <div className="container mx-auto px-6" >
 
             {/* Hero Section */}
             <section className="flex flex-col md:flex-row items-center justify-between py-16 gap-10 px-6">
@@ -169,7 +169,7 @@ const HomePage = () => {
                     transition={{ duration: 0.8 }}
                     className="w-full md:w-1/2"
                 >
-                    <div className="relative rounded-lg border border-[#1b2c68a0] bg-gradient-to-r from-[#0d1224] to-[#0a0d37] p-4 shadow-lg">
+                    <div className="relative rounded-lg border border-[#1b2c68a0] bg-gradient-to-r from-[#0d1224] to-[#0a0d37] p-4 shadow-lg ">
                         {/* Top Bar */}
                         <div className="flex space-x-2">
                             <div className="h-3 w-3 rounded-full bg-red-400"></div>
@@ -284,7 +284,7 @@ const HomePage = () => {
                     <div className="flex justify-center order-1 lg:order-2">
                         <Image
                             src="/profile.png"
-                            alt="Abu Said"
+                            alt="Shubham"
                             width={280}
                             height={280}
                             className="rounded-lg transition-all duration-1000 grayscale hover:grayscale-0 hover:scale-110 cursor-pointer"
@@ -299,7 +299,7 @@ const HomePage = () => {
             <section id="experience" className="my-12 ">
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-amber-500">Experience</h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-amber-500">Experience</h2>
                     <p className="text-gray-900 mt-2 text-lg">My work experience in the tech industry</p>
                 </div>
 
@@ -325,7 +325,7 @@ const HomePage = () => {
                 <div className="flex justify-center my-5 lg:py-8">
                     <div className="flex items-center">
 
-                        <span className=" text-3xl md:text-4xl font-bold text-amber-500">
+                        <span className=" text-3xl md:text-4xl font-extrabold text-amber-500">
                             Skills
                         </span>
 
@@ -356,7 +356,7 @@ const HomePage = () => {
             >
                 {/* Sticky Header */}
                 <div className="sticky top-0 w-full py-4 z-20 text-center ">
-                    <h2 className="text-3xl md:text-4xl font-bold text-amber-500">Projects</h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-amber-500">Projects</h2>
                 </div>
 
                 {/* Scrollable Container */}
@@ -424,12 +424,11 @@ const HomePage = () => {
             </section>
 
 
-
             {/* Education Section */}
-            <section id="education" className="my-12 ">
+            <section id="education" className="my-12 lg:my-16 relative">
                 {/* Section Title */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-4xl font-bold text-amber-500">Education</h2>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-amber-500">Education</h2>
                     <p className="text-gray-900 mt-2 text-lg">My academic background and qualifications</p>
                 </div>
 
@@ -457,8 +456,8 @@ const HomePage = () => {
                                 {/* Education Details */}
                                 <div>
                                     <h3 className="text-xl font-semibold">{edu.course}</h3>
-                                    <p className="text-gray-400 mt-1">{edu.university}</p>
-                                    <p className="text-sm text-gray-300">{edu.session}</p>
+                                    <p className="text-white mt-1">{edu.university}</p>
+                                    <p className="text-sm text-white">{edu.session}</p>
                                 </div>
                             </div>
                         ))}
@@ -481,33 +480,29 @@ const HomePage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                     {/* Contact Information Section */}
                     <div className="order-2 lg:order-1">
-                        <h2 className="text-3xl font-bold text-[#16f2b3] mb-6">Get in Touch</h2>
-                        <p className="text-gray-200 text-sm lg:text-lg mb-4">
+                        <h2 className="text-3xl font-extrabold text-amber-500 mb-6">Get in Touch</h2>
+                        <p className="text-gray-900 text-sm lg:text-lg mb-4">
                             Have questions or want to work together? Feel free to reach out!
                         </p>
                         <div className="space-y-4">
                             <div className="flex items-center space-x-3">
-                                <FaEnvelope className="text-xl text-[#16f2b3]" />
-                                <p className="text-gray-200">contact@company.com</p>
+                                <FaEnvelope className="text-xl text-amber-500" />
+                                <p className="text-gray-900">cusat.shubhamdca@gmail.com</p>
                             </div>
                             <div className="flex items-center space-x-3">
-                                <FaPhone className="text-xl text-[#16f2b3]" />
-                                <p className="text-gray-200">+1 234 567 890</p>
-                            </div>
-                            <div className="flex items-center space-x-3">
-                                <FaMapMarkerAlt className="text-xl text-[#16f2b3]" />
-                                <p className="text-gray-200">123 Main Street, City, Country</p>
+                                <FaPhone className="text-xl text-amber-500" />
+                                <p className="text-gray-900">+91 9097989707 </p>
                             </div>
                         </div>
                         {/* Social Media Links */}
                         <div className="flex space-x-4 mt-6">
-                            <a href="#" className="text-[#16f2b3] text-2xl hover:text-white">
+                            <a href="#" className="text-amber-500 text-2xl hover:text-white">
                                 <FaFacebook />
                             </a>
-                            <a href="#" className="text-[#16f2b3] text-2xl hover:text-white">
+                            <a href="#" className="text-amber-500 text-2xl hover:text-white">
                                 <FaTwitter />
                             </a>
-                            <a href="#" className="text-[#16f2b3] text-2xl hover:text-white">
+                            <a href="#" className="text-amber-500 text-2xl hover:text-white">
                                 <FaLinkedin />
                             </a>
                         </div>
