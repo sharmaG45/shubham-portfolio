@@ -1,14 +1,15 @@
 'use client';
-
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaBriefcase, FaPhone, FaUniversity, FaMapMarkerAlt, FaFacebook, FaTwitter } from "react-icons/fa";
+import { SiGeeksforgeeks, SiLeetcode } from "react-icons/si";
+import { FaGithub, FaLinkedin, FaEnvelope, FaDownload, FaBriefcase, FaPhone, FaUniversity, FaFacebook, FaTwitter, FaChevronDown, FaChevronRight } from "react-icons/fa";
 import Slider from "react-slick";
 import Image from 'next/image';
 import { useRef } from "react";
 
 const HomePage = () => {
 
-    const containerRef = useRef(null);
+    const [expanded, setExpanded] = useState(null);
 
     const projects = [
         {
@@ -29,7 +30,7 @@ const HomePage = () => {
             name: 'Cybertron',
             tools: ['React', 'Next.js', 'CSS', 'Bootstrap'],
             myRole: 'Frontend Developer',
-            description: ``,
+            description: `Cybertron is a modern web application built using React and Next.js, designed to provide a seamless user experience with optimized performance. The project features responsive UI components, dynamic routing, and efficient state management. Leveraging Bootstrap and custom CSS, the interface is visually appealing and mobile-friendly. As a Frontend Developer, I was responsible for designing and implementing key UI components, improving page responsiveness, and ensuring smooth navigation throughout the application.`,
             link: 'https://cybertron-flame.vercel.app/'
         },
         {
@@ -60,7 +61,6 @@ const HomePage = () => {
         }
     ]
 
-
     const skills = [
         { name: "HTML", img: "/assets/skill/html.ed6aaa50.svg" },
         { name: "CSS", img: "/assets/skill/css.e5e99f36.svg" },
@@ -71,15 +71,15 @@ const HomePage = () => {
         { name: "MongoDB", img: "/assets/skill/mongoDB.d8d2b67f.svg" },
         { name: "Firebase", img: "/assets/skill/firebase.20c6dcf8.svg" },
         { name: "Bootstrap", img: "/assets/skill/bootstrap.9e6ddba8.svg" },
-        { name: "Python", img: "/assets/skill/react.512a3a7e.svg" },
+        { name: "Python", img: "/assets/skill/python-svgrepo-com.svg" },
+        { name: "Java", img: "/assets/skill/java-4-logo-svgrepo-com.svg" },
         { name: "MySql", img: "/assets/skill/mysql.2ddb80d9.svg" },
         { name: "Git", img: "/assets/skill/git.21d80414.svg" },
-        { name: "Tailwind", img: "/assets/skill/tailwind.c0bbaf6f.svg" },
+        { name: "Tailwind CSS", img: "/assets/skill/tailwind.c0bbaf6f.svg" },
 
     ];
 
     const experiences = [
-
         {
             role: "Software Developer",
             company: "Jetquins Travels PVT LTD",
@@ -145,6 +145,13 @@ const HomePage = () => {
                         <a href="mailto:cusat.shubhamdca@gmail.com" className="text-gray-700 hover:text-gray-900 transition-transform transform hover:scale-110">
                             <FaEnvelope />
                         </a>
+                        <a href="https://leetcode.com/u/shubhamk45/" target="_blank" className="text-gray-700 hover:text-gray-900 transition-transform transform hover:scale-110">
+                            <SiLeetcode />
+                        </a>
+
+                        <a href="https://www.geeksforgeeks.org/user/shubham25u1/" target="_blank" className="text-gray-700 hover:text-gray-900 transition-transform transform hover:scale-110">
+                            <SiGeeksforgeeks />
+                        </a>
                     </div>
 
                     {/* Buttons Section */}
@@ -156,9 +163,14 @@ const HomePage = () => {
                         </a>
 
                         {/* Contact Me Button */}
-                        <a href="#contact" className="flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-gray-800 transition-transform transform hover:scale-105">
+                        <button
+                            onClick={() => {
+                                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                            }}
+                            className="flex items-center gap-2 text-white px-6 py-3 rounded-lg text-lg font-semibold shadow-md hover:bg-gray-800 transition-transform transform hover:scale-105 bg-[#1a1443]"
+                        >
                             Contact Me
-                        </a>
+                        </button>
                     </div>
                 </motion.div>
 
@@ -167,9 +179,9 @@ const HomePage = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8 }}
-                    className="w-full md:w-1/2"
+                    className="w-full md:w-1/2 mt-20"
                 >
-                    <div className="relative rounded-lg border border-[#1b2c68a0] bg-gradient-to-r from-[#0d1224] to-[#0a0d37] p-4 shadow-lg ">
+                    <div className="relative rounded-lg border border-[#1b2c68a0] bg-gradient-to-r from-[#1a1443] to-[#1a1443] p-10 shadow-lg ">
                         {/* Top Bar */}
                         <div className="flex space-x-2">
                             <div className="h-3 w-3 rounded-full bg-red-400"></div>
@@ -272,18 +284,21 @@ const HomePage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                     {/* Text Section */}
                     <div className="order-2 lg:order-1">
-                        <p className="font-medium mb-5 text-amber-500 text-xl uppercase">
+                        <p className="font-bold mb-5 text-amber-500 text-xl uppercase">
                             Who I am?
                         </p>
                         <p className="text-gray-900 text-sm lg:text-lg">
-                            My name is Shubham Kumar. I am a professional and enthusiastic programmer in my daily life. I am a quick learner with a self-learning attitude. I love to learn and explore new technologies and am passionate about problem-solving. I love almost all the stacks of web application development and love to make the web more open to the world. My core skill is based on JavaScript and I love to do most of the things using JavaScript. I am available for any kind of job opportunity that suits my skills and interests.
+                            I am Shubham Kumar, a passionate and self-driven Full-Stack Developer with expertise in JavaScript and modern web technologies. I enjoy building scalable, efficient, and user-friendly applications that enhance digital experiences. With strong problem-solving skills and a keen interest in exploring new technologies, I strive to develop innovative solutions.
+                            <br />
+
+                            I am always eager to learn, adapt, and contribute to projects that push boundaries. My goal is to create meaningful and impactful web applications that enhance user experiences and drive business efficiency.
                         </p>
                     </div>
 
                     {/* Image Section */}
                     <div className="flex justify-center order-1 lg:order-2">
                         <Image
-                            src="/profile.png"
+                            src="/assets/profile/pic4.png"
                             alt="Shubham"
                             width={280}
                             height={280}
@@ -295,7 +310,6 @@ const HomePage = () => {
             </section>
 
             {/* Experience */}
-
             <section id="experience" className="my-12 ">
                 {/* Section Title */}
                 <div className="text-center mb-12">
@@ -350,42 +364,41 @@ const HomePage = () => {
             </section>
 
             {/* Projects Section */}
-            <section
-                ref={containerRef}
-                className="relative z-10 h-screen w-full overflow-hidden flex flex-col items-center"
-            >
-                {/* Sticky Header */}
-                <div className="sticky top-0 w-full py-4 z-20 text-center ">
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-amber-500">Projects</h2>
-                </div>
+            <section className="min-h-screen  px-6 flex flex-col items-center">
+                {/* Title without background */}
+                <h2 className="text-4xl font-extrabold text-amber-500 mb-10  pb-2">
+                    Projects 
+                </h2>
 
-                {/* Scrollable Container */}
-                <div className="h-full w-full overflow-y-scroll snap-y snap-mandatory no-scrollbar">
+                {/* Project Cards with Background */}
+                <div className="w-full max-w-3xl space-y-6">
                     {projects.map((project, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, scale: 0.9 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.8 }}
-                            viewport={{ once: false, amount: 0.7 }}
-                            className="snap-center flex items-center justify-center h-screen w-full px-6 md:px-12"
-                        >
-                            <div className="max-w-4xl w-full p-8 rounded-lg border border-[#1b2c68a0] bg-gradient-to-r from-[#0d1224] to-[#0a0d37] shadow-lg">
-                                {/* Project Title */}
-                                <h3 className="text-white text-2xl font-semibold mb-6 text-center">
-                                    {project.name}
-                                </h3>
+                        <div key={index} className="bg-[#1a1443] rounded-xl shadow-xl transition-all duration-300">
+                            <button
+                                onClick={() => setExpanded(expanded === index ? null : index)}
+                                className="w-full flex justify-between items-center p-5 text-xl font-semibold text-cyan-300 rounded-xl hover:bg-[#1a233a] transition duration-200"
+                            >
+                                {project.name}
+                                {expanded === index ? (
+                                    <FaChevronDown className="text-gray-400" />
+                                ) : (
+                                    <FaChevronRight className="text-gray-400" />
+                                )}
+                            </button>
 
-                                {/* Code Block */}
-                                <div className="overflow-x-auto">
-                                    <pre className="border-t-2 border-indigo-900 px-6 py-6 font-mono text-sm md:text-base text-gray-300 whitespace-pre-wrap break-words">
+                            <motion.div
+                                initial={false}
+                                animate={{ height: expanded === index ? "auto" : 0 }}
+                                className="overflow-hidden"
+                            >
+                                <div className="p-6 bg-[#1a1443] text-gray-300 rounded-b-xl shadow-lg">
+                                    <pre className="text-sm md:text-base font-mono whitespace-pre-wrap bg-[#0e162f] p-4 rounded-lg border border-gray-700 text-white">
                                         <code>
-                                            <span className="text-pink-500">const</span>{" "}
-                                            <span className="text-white">{project.name.replace(/\s+/g, "")}</span>{" "}
-                                            <span className="text-pink-500">=</span> {"{"}
+                                            <span className="text-pink-500">const</span> {project.name.replace(/\s+/g, "")}{" "}
+                                            = {"{"}
                                             <br />
-                                            <span className="ml-4 text-white">name:</span>{" "}
-                                            <span className="text-gray-400">'{project.name}',</span>
+                                            <span className="ml-4 text-white">name:</span> '
+                                            <span className="text-gray-400">{project.name}</span>',
                                             <br />
                                             <span className="ml-4 text-white">tools:</span> {"["}
                                             {project.tools.map((tool, i) => (
@@ -395,34 +408,32 @@ const HomePage = () => {
                                             ))}
                                             {"]"}
                                             <br />
-                                            <span className="ml-4 text-white">myRole:</span>{" "}
-                                            <span className="text-gray-400">'{project.myRole}',</span>
+                                            <span className="ml-4 text-white">myRole:</span> '
+                                            <span className="text-gray-400">{project.myRole}</span>',
                                             <br />
-                                            <span className="ml-4 text-white">description:</span>{" "}
-                                            <span className="text-gray-400">'{project.description}',</span>
+                                            <span className="ml-4 text-white">description:</span> '
+                                            <span className="text-gray-400">{project.description}</span>',
                                             <br />
                                             {"};"}
                                         </code>
                                     </pre>
-                                </div>
 
-                                {/* Project Link Button */}
-                                <div className="mt-6 flex justify-center">
-                                    <a
-                                        href={project.link}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="px-6 py-3 bg-amber-500 text-[#0a0d37] font-semibold rounded-lg shadow-md hover:bg-amber-600 transition-all"
-                                    >
-                                        View Project
-                                    </a>
+                                    <div className="mt-6 text-center">
+                                        <a
+                                            href={project.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="px-5 py-2 bg-amber-500 text-[#0a0d37] font-semibold rounded-lg shadow-md hover:bg-amber-600 transition duration-300"
+                                        >
+                                            View Project 🌍
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+                        </div>
                     ))}
                 </div>
             </section>
-
 
             {/* Education Section */}
             <section id="education" className="my-12 lg:my-16 relative">
@@ -435,9 +446,9 @@ const HomePage = () => {
                 {/* Education Container */}
                 <div className="flex flex-col lg:flex-row items-center justify-center gap-12 px-4 ">
                     {/* Left-Side SVG Image */}
-                    <div className="hidden lg:flex items-center justify-center">
+                    <div className="hidden lg:flex items-center justify-center rounded-lg transition-all duration-1000  hover:grayscale-0 hover:scale-110 cursor-pointer">
                         <img
-                            src="/education.svg"
+                            src="/assets/images/edu.jpg"
                             alt="Education Illustration"
                             className="w-72 h-auto"
                         />
@@ -496,13 +507,13 @@ const HomePage = () => {
                         </div>
                         {/* Social Media Links */}
                         <div className="flex space-x-4 mt-6">
-                            <a href="#" className="text-amber-500 text-2xl hover:text-white">
+                            <a href="https://www.facebook.com/shubhamsharma.shubhamsharms.1" className="text-amber-500 text-2xl hover:text-white">
                                 <FaFacebook />
                             </a>
-                            <a href="#" className="text-amber-500 text-2xl hover:text-white">
+                            <a href="https://x.com/shubhamhjp" className="text-amber-500 text-2xl hover:text-white">
                                 <FaTwitter />
                             </a>
-                            <a href="#" className="text-amber-500 text-2xl hover:text-white">
+                            <a href="https://www.linkedin.com/in/shubham-kumar-8743731b3/" className="text-amber-500 text-2xl hover:text-blue-950">
                                 <FaLinkedin />
                             </a>
                         </div>
@@ -515,7 +526,7 @@ const HomePage = () => {
                             <input type="text" placeholder="Your Name" className="w-full p-3 border rounded" required />
                             <input type="email" placeholder="Your Email" className="w-full p-3 border rounded" required />
                             <textarea placeholder="Your Message" className="w-full p-3 border rounded" rows="4" required></textarea>
-                            <button className="w-full bg-[#16f2b3] text-white p-3 rounded hover:bg-[#1a1443]">Send Message</button>
+                            <button className="w-full bg-[#f59e0b] text-white p-3 rounded hover:bg-[#1a1443]">Send Message</button>
                         </form>
                     </div>
                 </div>

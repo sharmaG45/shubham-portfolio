@@ -3,6 +3,7 @@ import navMenu from "@/app/assets/navMenu.json";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
+import ShubhamLogo from "../logo/page";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,17 +25,25 @@ const Header = () => {
 
                 {/* Logo */}
                 <div className="text-2xl font-bold uppercase text-amber-500">
-                    Shubham
+                    <ShubhamLogo />
                 </div>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex gap-6 text-gray-700 font-medium">
+                <ul className="hidden lg:flex gap-8 text-gray-800 font-semibold uppercase text-lg">
                     {navMenu.map((menu, index) => (
-                        <li key={index}>
-                            <a href="#" className="hover:text-amber-500 transition duration-300">{menu.title}</a>
+                        <li key={index} className="relative group">
+                            <a
+                                href={menu.link}
+                                className="px-4 py-2 transition duration-300 group-hover:text-amber-500"
+                            >
+                                {menu.title}
+                            </a>
+                            {/* Animated Underline */}
+                            <span className="absolute left-0 bottom-0 w-0 h-1 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
                         </li>
                     ))}
                 </ul>
+
 
                 {/* Mobile Menu Button */}
                 <div className="md:hidden">
@@ -46,34 +55,40 @@ const Header = () => {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -100 }}
-                        transition={{ duration: 0.4 }}
-                        className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50"
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ type: "spring", stiffness: 100, damping: 15 }}
+                        className="fixed top-0 right-0 w-4/5 max-w-xs h-full bg-white/80 backdrop-blur-xl shadow-2xl z-50 flex flex-col p-6 border-l border-gray-200"
                     >
-                        <motion.div
-                            initial={{ scale: 0.8 }}
-                            animate={{ scale: 1 }}
-                            exit={{ scale: 0.8 }}
-                            transition={{ duration: 0.3 }}
-                            className="mobile-menu bg-white text-center w-4/5 max-w-sm rounded-xl p-6 shadow-lg relative"
+                        {/* Close Button */}
+                        <button
+                            className="absolute top-4 right-4 text-gray-700 text-3xl hover:text-red-500 transition duration-300"
+                            onClick={() => setIsOpen(false)}
                         >
-                            <button className="absolute top-4 right-4 text-gray-700 text-3xl" onClick={() => setIsOpen(false)}>
-                                <IoMdClose />
-                            </button>
+                            <IoMdClose />
+                        </button>
 
-                            <ul className="flex flex-col gap-6 text-lg font-semibold text-gray-800 mt-4">
-                                {navMenu.map((menu, index) => (
-                                    <li key={index}>
-                                        <a href="#" className="hover:text-amber-500 transition duration-300">{menu.title}</a>
-                                    </li>
-                                ))}
-                            </ul>
-                        </motion.div>
+                        {/* Navigation Menu */}
+                        <ul className="flex flex-col gap-6 text-lg font-bold text-gray-800 uppercase mt-10">
+                            {navMenu.map((menu, index) => (
+                                <li key={index} className="relative group">
+                                    <a
+                                        href={menu.link}
+                                        className="block py-3 px-6 rounded-lg text-center transition-all duration-300 bg-gradient-to-r from-amber-500 to-yellow-500 text-white shadow-md group-hover:scale-105"
+                                    >
+                                        {menu.title}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+
+                        {/* Decorative Lines */}
+                        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 w-3/4 h-1 bg-gradient-to-r from-amber-500 to-yellow-500 rounded-full"></div>
                     </motion.div>
                 )}
             </AnimatePresence>
+
         </header>
     );
 };
